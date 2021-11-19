@@ -1,4 +1,5 @@
 using Likeit.Backend.API.Models;
+using Likeit.Backend.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Likeit.Backend.API.Controllers;
@@ -7,23 +8,23 @@ namespace Likeit.Backend.API.Controllers;
 [Route("[controller]")]
 public class ArticleController : ControllerBase
 {
-   
-    private List<Article> Articles = new()
+    private readonly IArticleRepository _articleRepository;
+
+    public ArticleController(IArticleRepository articleRepository)
     {
-        new Article("Lorem Ipsum 1", "Lorem ipsum dolor set"),
-        new Article("Lorem Ipsum 2", "Lorem ipsum dolor set"),
-        new Article("Lorem Ipsum 3", "Lorem ipsum dolor set")
-    };
+        _articleRepository = articleRepository;
+    }
 
     [HttpGet(Name = "GetArticles")]
     public IEnumerable<Article> Get()
     {
-        return Articles;
+        return _articleRepository.List();
     }
 
+    [HttpPost("{id:int}/like")]
     public IActionResult Post(int id)
     {
-        Articles[id].Like();
-        return Ok();
+        var article = _articleRepository.GetById(id);
+        return Ok(article);
     }
 }
