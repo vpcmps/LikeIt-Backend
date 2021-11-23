@@ -1,0 +1,34 @@
+version: '3.5'
+
+services:
+  postgres: 
+    image: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD-pwd@123!}
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+    - "5432:5432"
+
+  rabbit:
+    image: rabbitmq
+    command: rabbitmq-server
+    ports:
+    - "5672:5672"
+    - "15672:15672"
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "5672"]
+      interval: 5s
+      timeout: 15s
+      retries: 1
+
+  redis:
+    image: redis
+    command: redis-server --requirepass pwd@123!
+    ports:
+      - "6379:6379"
+
+volumes:
+ postgres:

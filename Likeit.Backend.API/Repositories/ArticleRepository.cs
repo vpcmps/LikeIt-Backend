@@ -32,4 +32,9 @@ public class ArticleRepository : IArticleRepository
     {
         return _context.SaveChanges() >= 0;
     }
+
+    public void Register(Article article)
+    {
+        throw new NotImplementedException();
+    }
 }

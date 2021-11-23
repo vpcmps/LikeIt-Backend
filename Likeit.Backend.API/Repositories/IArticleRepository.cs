@@ -8,4 +8,5 @@ public interface IArticleRepository
     Article GetById(int id);
     void Update(Article article);
     bool Commit();
+    void Register(Article article);
 }

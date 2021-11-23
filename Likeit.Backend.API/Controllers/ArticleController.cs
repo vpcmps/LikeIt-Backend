@@ -15,16 +15,44 @@ public class ArticleController : ControllerBase
         _articleRepository = articleRepository;
     }
 
-    [HttpGet(Name = "GetArticles")]
-    public IEnumerable<Article> Get()
+    [HttpPost]
+    public IActionResult Post([FromBody] Article article)
     {
-        return _articleRepository.List();
+        try
+        {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            _articleRepository.Register(article);
+            _articleRepository.Commit();
+            return Ok();
+        }
+        catch (Exception)
+        {
+            return BadRequest();
+        }
+    }
+
+    [HttpGet("{id:int}/likes", Name = "GetArticleLikes")]
+    public IActionResult Get(int id)
+    {
+        return Ok(_articleRepository.GetById(id).Likes);
     }
 
     [HttpPost("{id:int}/like")]
     public IActionResult Post(int id)
     {
-        var article = _articleRepository.GetById(id);
-        return Ok(article);
+        try
+        {
+            var article = _articleRepository.GetById(id);
+            article.Like();
+            _articleRepository.Update(article);
+            _articleRepository.Commit();
+            return Ok(article);
+        }
+        catch (Exception)
+        {
+            return BadRequest();
+        }
     }
 }

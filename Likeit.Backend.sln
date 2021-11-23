@@ -1,21 +1,36 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-API", "1-API", "{95C09A91-EF6E-432C-A918-94EEABE0E6DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Likeit.Backend.API", "Likeit.Backend.API\Likeit.Backend.API.csproj", "{03000FB2-2208-4C06-96F5-72D7B145254F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Likeit.Backend.API", "Likeit.Backend.API\Likeit.Backend.API.csproj", "{03000FB2-2208-4C06-96F5-72D7B145254F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{991B4629-0C20-4BE9-BC77-96A6F4AA9883}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{03000FB2-2208-4C06-96F5-72D7B145254F} = {95C09A91-EF6E-432C-A918-94EEABE0E6DF}
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{03000FB2-2208-4C06-96F5-72D7B145254F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{03000FB2-2208-4C06-96F5-72D7B145254F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03000FB2-2208-4C06-96F5-72D7B145254F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03000FB2-2208-4C06-96F5-72D7B145254F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{03000FB2-2208-4C06-96F5-72D7B145254F} = {95C09A91-EF6E-432C-A918-94EEABE0E6DF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49F9CD57-F0A8-4E94-951A-E7F012CCDCAB}
 	EndGlobalSection
 EndGlobal
