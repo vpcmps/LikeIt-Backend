@@ -1,8 +1,9 @@
-﻿using Likeit.Backend.API.Contexts;
-using Likeit.Backend.API.Models;
+﻿using Likeit.Backend.Data.Contexts;
+using Likeit.Backend.Domain.Entities;
+using Likeit.Backend.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace Likeit.Backend.API.Repositories;
+namespace Likeit.Backend.Data.Repositories;
 
 public class ArticleRepository : IArticleRepository
 {
@@ -18,7 +19,7 @@ public class ArticleRepository : IArticleRepository
         return _context.Set<Article>().ToList();
     }
 
-    public Article GetById(int id)
+    public Article GetById(Guid id)
     {
         return _context.Set<Article>().FirstOrDefault(x => x.Id == id) ?? throw new Exception();
     }
@@ -35,6 +36,6 @@ public class ArticleRepository : IArticleRepository
 
     public void Register(Article article)
     {
-        throw new NotImplementedException();
+        _context.Add(article);
     }
 }

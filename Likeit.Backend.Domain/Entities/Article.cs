@@ -1,6 +1,4 @@
-using System.ComponentModel.DataAnnotations;
-
-namespace Likeit.Backend.API.Models;
+namespace Likeit.Backend.Domain.Entities;
 
 public class Article
 {
@@ -15,10 +13,8 @@ public class Article
         Likes = 0;
     }
 
-    public int Id { get; set; }
-    [Required]
+    public Guid Id { get; set; }
     public string Title { get; set; }
-    [Required]
     public string Body { get; set; }
     public int Likes { get; set; }
     

@@ -1,12 +1,12 @@
-﻿using Likeit.Backend.API.Models;
+﻿using Likeit.Backend.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
-namespace Likeit.Backend.API.Contexts;
+namespace Likeit.Backend.Data.Contexts;
 
 public class LikeitContext : DbContext
 {
-    public LikeitContext(DbContextOptions<LikeitContext> opcoes)
-: base(opcoes)
+    public LikeitContext(DbContextOptions<LikeitContext> opcoes) : base(opcoes)
     { }
 
     public DbSet<Article> Articles { get; set; }

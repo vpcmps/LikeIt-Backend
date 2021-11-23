@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Likeit.Backend.API.Models;
+using Likeit.Backend.Domain.Entities;
 
-namespace Likeit.Backend.API.Validations
+namespace Likeit.Backend.Domain.Validators
 {
     public class ArticleValidator : AbstractValidator<Article>
     {

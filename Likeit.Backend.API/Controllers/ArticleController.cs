@@ -1,5 +1,5 @@
-using Likeit.Backend.API.Models;
-using Likeit.Backend.API.Repositories;
+using Likeit.Backend.Application.Services;
+using Likeit.Backend.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Likeit.Backend.API.Controllers;
@@ -8,11 +8,11 @@ namespace Likeit.Backend.API.Controllers;
 [Route("[controller]")]
 public class ArticleController : ControllerBase
 {
-    private readonly IArticleRepository _articleRepository;
+    private readonly IArticleAppService _articleAppService;
 
-    public ArticleController(IArticleRepository articleRepository)
+    public ArticleController(IArticleAppService articleRepository)
     {
-        _articleRepository = articleRepository;
+        _articleAppService = articleRepository;
     }
 
     [HttpPost]
@@ -23,8 +23,8 @@ public class ArticleController : ControllerBase
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            _articleRepository.Register(article);
-            _articleRepository.Commit();
+            _articleAppService.Register(article);
+            _articleAppService.Commit();
             return Ok();
         }
         catch (Exception)
@@ -36,7 +36,7 @@ public class ArticleController : ControllerBase
     [HttpGet("{id:int}/likes", Name = "GetArticleLikes")]
     public IActionResult Get(int id)
     {
-        return Ok(_articleRepository.GetById(id).Likes);
+        return Ok(_articleAppService.GetById(id).Likes);
     }
 
     [HttpPost("{id:int}/like")]
@@ -44,10 +44,10 @@ public class ArticleController : ControllerBase
     {
         try
         {
-            var article = _articleRepository.GetById(id);
+            var article = _articleAppService.GetById(id);
             article.Like();
-            _articleRepository.Update(article);
-            _articleRepository.Commit();
+            _articleAppService.Update(article);
+            _articleAppService.Commit();
             return Ok(article);
         }
         catch (Exception)
