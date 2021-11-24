@@ -24,7 +24,7 @@ public class ArticleController : ControllerBase
                 return BadRequest(ModelState);
 
             _articleAppService.Register(article);
-            _articleAppService.Commit();
+
             return Ok();
         }
         catch (Exception)
@@ -33,22 +33,19 @@ public class ArticleController : ControllerBase
         }
     }
 
-    [HttpGet("{id:int}/likes", Name = "GetArticleLikes")]
-    public IActionResult Get(int id)
+    [HttpGet("{id:guid}/likes", Name = "GetArticleLikes")]
+    public IActionResult Get(Guid id)
     {
         return Ok(_articleAppService.GetById(id).Likes);
     }
 
-    [HttpPost("{id:int}/like")]
-    public IActionResult Post(int id)
+    [HttpPost("{id:guid}/like")]
+    public IActionResult Post(Guid id)
     {
         try
         {
-            var article = _articleAppService.GetById(id);
-            article.Like();
-            _articleAppService.Update(article);
-            _articleAppService.Commit();
-            return Ok(article);
+            _articleAppService.Like(id);
+            return Ok();
         }
         catch (Exception)
         {

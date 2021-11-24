@@ -1,9 +1,10 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using Likeit.Backend.API.Contexts;
-using Likeit.Backend.API.Models;
-using Likeit.Backend.API.Repositories;
-using Likeit.Backend.API.Validations;
+using Likeit.Backend.Data.Contexts;
+using Likeit.Backend.Data.Repositories;
+using Likeit.Backend.Domain.Entities;
+using Likeit.Backend.Domain.Repositories;
+using Likeit.Backend.Domain.Validators;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
