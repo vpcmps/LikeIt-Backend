@@ -4,7 +4,8 @@ public class Article
 {
     internal Article()
     {
-
+        Title = string.Empty;
+        Body = string.Empty;
     }
     public Article(string title, string body)
     {

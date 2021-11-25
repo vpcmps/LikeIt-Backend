@@ -12,6 +12,11 @@ public class LikeEvent
 
 public class RegisterArticleEvent
 {
+    public RegisterArticleEvent()
+    {
+        Title = string.Empty;
+        Body = string.Empty;
+    }
     public string Title { get; set; }
     public string Body { get; set; }
 }

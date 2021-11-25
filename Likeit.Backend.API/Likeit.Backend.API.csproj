@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
@@ -9,7 +9,6 @@
 
     <ItemGroup>
         <PackageReference Include="FluentValidation" Version="10.3.4" />
-        <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.4" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -21,6 +20,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Likeit.Backend.Application\Likeit.Backend.Application.csproj" />
+      <ProjectReference Include="..\Likeit.Backend.CrossCutting.Configurations\Likeit.Backend.CrossCutting.Configurations.csproj" />
       <ProjectReference Include="..\Likeit.Backend.Data.Redis\Likeit.Backend.Data.Redis.csproj" />
       <ProjectReference Include="..\Likeit.Backend.Data\Likeit.Backend.Data.csproj" />
       <ProjectReference Include="..\Likeit.Backend.Domain\Likeit.Backend.Domain.csproj" />

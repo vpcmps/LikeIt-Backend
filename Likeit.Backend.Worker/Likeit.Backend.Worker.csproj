@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Likeit.Backend.Application\Likeit.Backend.Application.csproj" />
+    <ProjectReference Include="..\Likeit.Backend.CrossCutting.Configurations\Likeit.Backend.CrossCutting.Configurations.csproj" />
     <ProjectReference Include="..\Likeit.Backend.Data.Redis\Likeit.Backend.Data.Redis.csproj" />
     <ProjectReference Include="..\Likeit.Backend.Data\Likeit.Backend.Data.csproj" />
     <ProjectReference Include="..\Likeit.Backend.Domain\Likeit.Backend.Domain.csproj" />

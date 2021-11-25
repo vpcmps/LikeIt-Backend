@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-API", "1-API", "{95C09A91-EF6E-432C-A918-94EEABE0E6DF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - API", "1 - API", "{95C09A91-EF6E-432C-A918-94EEABE0E6DF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Likeit.Backend.API", "Likeit.Backend.API\Likeit.Backend.API.csproj", "{03000FB2-2208-4C06-96F5-72D7B145254F}"
 EndProject
@@ -30,6 +30,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Likeit.Backend.Worker", "Likeit.Backend.Worker\Likeit.Backend.Worker.csproj", "{FBADF997-2C70-4BA2-9DA0-F0C398C4B7E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Likeit.Backend.Data.Redis", "Likeit.Backend.Data.Redis\Likeit.Backend.Data.Redis.csproj", "{CDC96DF5-E5CC-4555-BCD1-C78DA293E8AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - CrossCutting", "6 - CrossCutting", "{3C53B829-4060-4B7C-8575-B7AEB842D5FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Likeit.Backend.CrossCutting.Configurations", "Likeit.Backend.CrossCutting.Configurations\Likeit.Backend.CrossCutting.Configurations.csproj", "{F0D422E6-A92D-42DD-A88A-0276055E1578}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +65,10 @@ Global
 		{CDC96DF5-E5CC-4555-BCD1-C78DA293E8AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDC96DF5-E5CC-4555-BCD1-C78DA293E8AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDC96DF5-E5CC-4555-BCD1-C78DA293E8AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0D422E6-A92D-42DD-A88A-0276055E1578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0D422E6-A92D-42DD-A88A-0276055E1578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0D422E6-A92D-42DD-A88A-0276055E1578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0D422E6-A92D-42DD-A88A-0276055E1578}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +80,7 @@ Global
 		{91F742D4-4DFA-4FD4-92C1-A80FAA411FB1} = {DDD23B2F-8F6A-4928-86D1-BE684D6E031F}
 		{FBADF997-2C70-4BA2-9DA0-F0C398C4B7E3} = {A4506ECE-54C3-475C-9015-CFD189C4CA21}
 		{CDC96DF5-E5CC-4555-BCD1-C78DA293E8AA} = {8087B480-E979-45A8-8EE8-E1D9A4759987}
+		{F0D422E6-A92D-42DD-A88A-0276055E1578} = {3C53B829-4060-4B7C-8575-B7AEB842D5FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49F9CD57-F0A8-4E94-951A-E7F012CCDCAB}

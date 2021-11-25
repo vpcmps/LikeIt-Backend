@@ -1,8 +1,10 @@
+using Likeit.Backend.CrossCutting.Configurations.Extensions;
 using Likeit.Backend.Data.Contexts;
 using Likeit.Backend.Data.Redis;
 using Likeit.Backend.Data.Repositories;
 using Likeit.Backend.Domain.Repositories;
 using Likeit.Backend.Domain.Services;
+using Likeit.Backend.Worker.Configurations;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -12,8 +14,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Likeit.Backend.Worker
-{
+namespace Likeit.Backend.Worker;
     public class Program
     {
 
@@ -31,31 +32,13 @@ namespace Likeit.Backend.Worker
                         .AddJsonFile("appsettings.json")
                         .Build();
 
-                    var connectionString = configuration.GetConnectionString("PGDatabase");
-                    services.AddDbContext<LikeitContext>(x => x.UseNpgsql(configuration.GetConnectionString("PGDatabase")));
+                    services.RegisterContext(configuration);
 
-                    services.AddStackExchangeRedisCache(options =>
-                    {
-                        options.Configuration = configuration.GetConnectionString("Redis");
-                    });
+                    services.RegisterRedis(configuration);
 
-                    services.AddScoped<IArticleRepository, ArticleRepository>();
-                    services.AddScoped<IRedisRepository, RedisRepository>();
-                    services.AddScoped<IArticleDomainService, ArticleDomainService>();
-                    services.AddMassTransit(x =>
-                    {
-                        var entryAssembly = Assembly.GetEntryAssembly();
+                    services.RegisterDependencies();
 
-                        x.AddConsumers(entryAssembly);
-                        x.SetKebabCaseEndpointNameFormatter();
-
-                        x.UsingRabbitMq((ctx, cfg) =>
-                        {
-                            cfg.ConfigureEndpoints(ctx);
-                        });
-                    });
-
-                    services.AddMassTransitHostedService(true);
+                    services.RegisterMassTransit();
                 });
     }
-}
+
