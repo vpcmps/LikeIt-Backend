@@ -36,7 +36,7 @@ public class ArticleController : ControllerBase
     [HttpGet("{id:guid}/likes", Name = "GetArticleLikes")]
     public IActionResult Get(Guid id)
     {
-        return Ok(_articleAppService.GetById(id).Likes);
+        return Ok(_articleAppService.GetLikesCountByArticleId(id));
     }
 
     [HttpPost("{id:guid}/like")]

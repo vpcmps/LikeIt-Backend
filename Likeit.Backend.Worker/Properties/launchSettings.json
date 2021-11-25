@@ -1,0 +1,11 @@
+﻿{
+  "profiles": {
+    "Likeit.Backend.Worker": {
+      "commandName": "Project",
+      "dotnetRunMessages": "true",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

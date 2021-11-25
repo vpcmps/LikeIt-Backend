@@ -17,13 +17,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Data", "4 - Data", "{8087B480-E979-45A8-8EE8-E1D9A4759987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Likeit.Backend.Domain", "Likeit.Backend.Domain\Likeit.Backend.Domain.csproj", "{AC06DC2F-3BDD-47A6-B585-3EA514D8CC4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Likeit.Backend.Domain", "Likeit.Backend.Domain\Likeit.Backend.Domain.csproj", "{AC06DC2F-3BDD-47A6-B585-3EA514D8CC4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Likeit.Backend.Data", "Likeit.Backend.Data\Likeit.Backend.Data.csproj", "{39E2A24F-4EDB-4466-B566-5F9DE2B9D0E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Likeit.Backend.Data", "Likeit.Backend.Data\Likeit.Backend.Data.csproj", "{39E2A24F-4EDB-4466-B566-5F9DE2B9D0E1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{DDD23B2F-8F6A-4928-86D1-BE684D6E031F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Likeit.Backend.Application", "Likeit.Backend.Application\Likeit.Backend.Application.csproj", "{91F742D4-4DFA-4FD4-92C1-A80FAA411FB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Likeit.Backend.Application", "Likeit.Backend.Application\Likeit.Backend.Application.csproj", "{91F742D4-4DFA-4FD4-92C1-A80FAA411FB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Worker", "5 - Worker", "{A4506ECE-54C3-475C-9015-CFD189C4CA21}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Likeit.Backend.Worker", "Likeit.Backend.Worker\Likeit.Backend.Worker.csproj", "{FBADF997-2C70-4BA2-9DA0-F0C398C4B7E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Likeit.Backend.Data.Redis", "Likeit.Backend.Data.Redis\Likeit.Backend.Data.Redis.csproj", "{CDC96DF5-E5CC-4555-BCD1-C78DA293E8AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +53,14 @@ Global
 		{91F742D4-4DFA-4FD4-92C1-A80FAA411FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91F742D4-4DFA-4FD4-92C1-A80FAA411FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91F742D4-4DFA-4FD4-92C1-A80FAA411FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBADF997-2C70-4BA2-9DA0-F0C398C4B7E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBADF997-2C70-4BA2-9DA0-F0C398C4B7E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBADF997-2C70-4BA2-9DA0-F0C398C4B7E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBADF997-2C70-4BA2-9DA0-F0C398C4B7E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC96DF5-E5CC-4555-BCD1-C78DA293E8AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC96DF5-E5CC-4555-BCD1-C78DA293E8AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC96DF5-E5CC-4555-BCD1-C78DA293E8AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC96DF5-E5CC-4555-BCD1-C78DA293E8AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +70,8 @@ Global
 		{AC06DC2F-3BDD-47A6-B585-3EA514D8CC4B} = {37555D08-031A-4239-97C7-E9ED183720ED}
 		{39E2A24F-4EDB-4466-B566-5F9DE2B9D0E1} = {8087B480-E979-45A8-8EE8-E1D9A4759987}
 		{91F742D4-4DFA-4FD4-92C1-A80FAA411FB1} = {DDD23B2F-8F6A-4928-86D1-BE684D6E031F}
+		{FBADF997-2C70-4BA2-9DA0-F0C398C4B7E3} = {A4506ECE-54C3-475C-9015-CFD189C4CA21}
+		{CDC96DF5-E5CC-4555-BCD1-C78DA293E8AA} = {8087B480-E979-45A8-8EE8-E1D9A4759987}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49F9CD57-F0A8-4E94-951A-E7F012CCDCAB}

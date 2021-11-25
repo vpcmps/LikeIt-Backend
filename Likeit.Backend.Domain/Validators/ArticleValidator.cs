@@ -7,6 +7,10 @@ namespace Likeit.Backend.Domain.Validators
     {
         public ArticleValidator()
         {
+            RuleFor(x=>x.Id)
+                .NotEmpty()
+                .NotNull();
+
             RuleFor(x => x.Title).NotEmpty();
             RuleFor(x => x.Body).NotEmpty();
         }

@@ -13,11 +13,11 @@ services:
     - "5432:5432"
 
   rabbit:
-    image: rabbitmq
-    command: rabbitmq-server
+    image: masstransit/rabbitmq:latest
     ports:
-    - "5672:5672"
-    - "15672:15672"
+     - "5672:5672"
+     - "15672:15672"
+     - "15692:15692"
     healthcheck:
       test: ["CMD", "nc", "-z", "localhost", "5672"]
       interval: 5s
